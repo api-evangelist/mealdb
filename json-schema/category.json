@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mealdb/main/json-schema/category.json",
+  "title": "Category",
+  "description": "A meal category from TheMealDB, such as Beef, Chicken, Dessert, or Vegetarian.",
+  "type": "object",
+  "properties": {
+    "idCategory": {
+      "type": "string",
+      "description": "Unique numeric category identifier",
+      "examples": ["1"]
+    },
+    "strCategory": {
+      "type": "string",
+      "description": "Category name",
+      "examples": ["Beef", "Chicken", "Dessert", "Lamb", "Miscellaneous", "Pasta", "Pork", "Seafood", "Side", "Starter", "Vegan", "Vegetarian", "Breakfast", "Goat"]
+    },
+    "strCategoryThumb": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the category thumbnail image",
+      "examples": ["https://www.themealdb.com/images/category/beef.png"]
+    },
+    "strCategoryDescription": {
+      "type": "string",
+      "description": "Descriptive text about the category"
+    }
+  },
+  "required": ["idCategory", "strCategory", "strCategoryThumb"]
+}

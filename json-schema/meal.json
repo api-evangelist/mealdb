@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mealdb/main/json-schema/meal.json",
+  "title": "Meal",
+  "description": "Full recipe record from TheMealDB including ingredients, measurements, and cooking instructions.",
+  "type": "object",
+  "properties": {
+    "idMeal": {
+      "type": "string",
+      "description": "Unique numeric identifier for the meal",
+      "examples": ["52771"]
+    },
+    "strMeal": {
+      "type": "string",
+      "description": "Meal name",
+      "examples": ["Spicy Arrabiata Penne"]
+    },
+    "strDrinkAlternate": {
+      "type": ["string", "null"],
+      "description": "Suggested drink pairing"
+    },
+    "strCategory": {
+      "type": "string",
+      "description": "Meal category",
+      "examples": ["Vegetarian", "Beef", "Seafood", "Chicken", "Dessert", "Pasta", "Pork", "Lamb", "Breakfast", "Goat", "Vegan", "Side", "Starter", "Miscellaneous"]
+    },
+    "strArea": {
+      "type": "string",
+      "description": "Cuisine area or country of origin",
+      "examples": ["Italian", "Mexican", "Japanese", "British", "American", "French", "Chinese", "Indian", "Canadian", "Thai"]
+    },
+    "strInstructions": {
+      "type": "string",
+      "description": "Step-by-step cooking instructions"
+    },
+    "strMealThumb": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the meal image. Append /small, /medium, or /large for sized variants.",
+      "examples": ["https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"]
+    },
+    "strTags": {
+      "type": ["string", "null"],
+      "description": "Comma-separated tags for the meal",
+      "examples": ["Pasta,Curry"]
+    },
+    "strYoutube": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "YouTube video URL for a recipe walkthrough"
+    },
+    "strIngredient1": { "type": ["string", "null"] },
+    "strIngredient2": { "type": ["string", "null"] },
+    "strIngredient3": { "type": ["string", "null"] },
+    "strIngredient4": { "type": ["string", "null"] },
+    "strIngredient5": { "type": ["string", "null"] },
+    "strIngredient6": { "type": ["string", "null"] },
+    "strIngredient7": { "type": ["string", "null"] },
+    "strIngredient8": { "type": ["string", "null"] },
+    "strIngredient9": { "type": ["string", "null"] },
+    "strIngredient10": { "type": ["string", "null"] },
+    "strIngredient11": { "type": ["string", "null"] },
+    "strIngredient12": { "type": ["string", "null"] },
+    "strIngredient13": { "type": ["string", "null"] },
+    "strIngredient14": { "type": ["string", "null"] },
+    "strIngredient15": { "type": ["string", "null"] },
+    "strIngredient16": { "type": ["string", "null"] },
+    "strIngredient17": { "type": ["string", "null"] },
+    "strIngredient18": { "type": ["string", "null"] },
+    "strIngredient19": { "type": ["string", "null"] },
+    "strIngredient20": { "type": ["string", "null"] },
+    "strMeasure1": { "type": ["string", "null"] },
+    "strMeasure2": { "type": ["string", "null"] },
+    "strMeasure3": { "type": ["string", "null"] },
+    "strMeasure4": { "type": ["string", "null"] },
+    "strMeasure5": { "type": ["string", "null"] },
+    "strMeasure6": { "type": ["string", "null"] },
+    "strMeasure7": { "type": ["string", "null"] },
+    "strMeasure8": { "type": ["string", "null"] },
+    "strMeasure9": { "type": ["string", "null"] },
+    "strMeasure10": { "type": ["string", "null"] },
+    "strMeasure11": { "type": ["string", "null"] },
+    "strMeasure12": { "type": ["string", "null"] },
+    "strMeasure13": { "type": ["string", "null"] },
+    "strMeasure14": { "type": ["string", "null"] },
+    "strMeasure15": { "type": ["string", "null"] },
+    "strMeasure16": { "type": ["string", "null"] },
+    "strMeasure17": { "type": ["string", "null"] },
+    "strMeasure18": { "type": ["string", "null"] },
+    "strMeasure19": { "type": ["string", "null"] },
+    "strMeasure20": { "type": ["string", "null"] },
+    "strSource": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "Original recipe source URL"
+    },
+    "strImageSource": {
+      "type": ["string", "null"],
+      "description": "Image attribution source"
+    },
+    "strCreativeCommonsConfirmed": {
+      "type": ["string", "null"],
+      "description": "Indicates if the image is confirmed Creative Commons licensed"
+    },
+    "dateModified": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Date the meal record was last modified"
+    }
+  },
+  "required": ["idMeal", "strMeal", "strCategory", "strArea", "strInstructions", "strMealThumb"]
+}

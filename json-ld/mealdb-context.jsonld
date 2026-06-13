@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "mealdb": "https://www.themealdb.com/api/json/v1/1/",
+
+    "Meal": "schema:Recipe",
+    "Category": "schema:Thing",
+    "MealSummary": "schema:Recipe",
+
+    "idMeal": "@id",
+    "strMeal": "schema:name",
+    "strCategory": "schema:recipeCategory",
+    "strArea": "schema:recipeCuisine",
+    "strInstructions": "schema:recipeInstructions",
+    "strMealThumb": "schema:image",
+    "strTags": "schema:keywords",
+    "strYoutube": "schema:video",
+    "strSource": "schema:url",
+    "dateModified": "schema:dateModified",
+
+    "strIngredient1": "schema:recipeIngredient",
+    "strIngredient2": "schema:recipeIngredient",
+    "strIngredient3": "schema:recipeIngredient",
+    "strIngredient4": "schema:recipeIngredient",
+    "strIngredient5": "schema:recipeIngredient",
+    "strIngredient6": "schema:recipeIngredient",
+    "strIngredient7": "schema:recipeIngredient",
+    "strIngredient8": "schema:recipeIngredient",
+    "strIngredient9": "schema:recipeIngredient",
+    "strIngredient10": "schema:recipeIngredient",
+    "strIngredient11": "schema:recipeIngredient",
+    "strIngredient12": "schema:recipeIngredient",
+    "strIngredient13": "schema:recipeIngredient",
+    "strIngredient14": "schema:recipeIngredient",
+    "strIngredient15": "schema:recipeIngredient",
+    "strIngredient16": "schema:recipeIngredient",
+    "strIngredient17": "schema:recipeIngredient",
+    "strIngredient18": "schema:recipeIngredient",
+    "strIngredient19": "schema:recipeIngredient",
+    "strIngredient20": "schema:recipeIngredient",
+
+    "strMeasure1": "schema:value",
+    "strMeasure2": "schema:value",
+    "strMeasure3": "schema:value",
+    "strMeasure4": "schema:value",
+    "strMeasure5": "schema:value",
+    "strMeasure6": "schema:value",
+    "strMeasure7": "schema:value",
+    "strMeasure8": "schema:value",
+    "strMeasure9": "schema:value",
+    "strMeasure10": "schema:value",
+    "strMeasure11": "schema:value",
+    "strMeasure12": "schema:value",
+    "strMeasure13": "schema:value",
+    "strMeasure14": "schema:value",
+    "strMeasure15": "schema:value",
+    "strMeasure16": "schema:value",
+    "strMeasure17": "schema:value",
+    "strMeasure18": "schema:value",
+    "strMeasure19": "schema:value",
+    "strMeasure20": "schema:value",
+
+    "idCategory": "@id",
+    "strCategory": "schema:name",
+    "strCategoryThumb": "schema:image",
+    "strCategoryDescription": "schema:description",
+
+    "meals": {
+      "@id": "schema:mainEntity",
+      "@container": "@set"
+    },
+    "categories": {
+      "@id": "schema:mainEntity",
+      "@container": "@set"
+    }
+  }
+}

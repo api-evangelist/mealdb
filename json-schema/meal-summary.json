@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/mealdb/main/json-schema/meal-summary.json",
+  "title": "MealSummary",
+  "description": "Abbreviated meal record returned by filter endpoints (/filter.php). Contains only the meal name, thumbnail, and ID.",
+  "type": "object",
+  "properties": {
+    "strMeal": {
+      "type": "string",
+      "description": "Meal name",
+      "examples": ["Spicy Arrabiata Penne"]
+    },
+    "strMealThumb": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the meal thumbnail image",
+      "examples": ["https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"]
+    },
+    "idMeal": {
+      "type": "string",
+      "description": "Unique numeric identifier for the meal",
+      "examples": ["52771"]
+    }
+  },
+  "required": ["strMeal", "strMealThumb", "idMeal"]
+}

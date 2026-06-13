@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TheMealDB Vocabulary",
+  "description": "Controlled vocabulary of terms, categories, areas, and field patterns used by TheMealDB API.",
+  "version": "1.0.0",
+  "source": "https://www.themealdb.com/api.php",
+  "categories": {
+    "description": "Valid meal category names returned by /categories.php and used as filter values in /filter.php?c=",
+    "values": [
+      "Beef",
+      "Breakfast",
+      "Chicken",
+      "Dessert",
+      "Goat",
+      "Lamb",
+      "Miscellaneous",
+      "Pasta",
+      "Pork",
+      "Seafood",
+      "Side",
+      "Starter",
+      "Vegan",
+      "Vegetarian"
+    ]
+  },
+  "areas": {
+    "description": "Valid cuisine area / country names used as filter values in /filter.php?a=",
+    "values": [
+      "American",
+      "British",
+      "Canadian",
+      "Chinese",
+      "Croatian",
+      "Dutch",
+      "Egyptian",
+      "Filipino",
+      "French",
+      "Greek",
+      "Indian",
+      "Irish",
+      "Italian",
+      "Jamaican",
+      "Japanese",
+      "Kenyan",
+      "Malaysian",
+      "Mexican",
+      "Moroccan",
+      "Polish",
+      "Portuguese",
+      "Russian",
+      "Spanish",
+      "Thai",
+      "Tunisian",
+      "Turkish",
+      "Ukrainian",
+      "Unknown",
+      "Vietnamese"
+    ]
+  },
+  "fieldPatterns": {
+    "description": "Naming patterns used for parallel ingredient and measurement fields in the Meal schema.",
+    "ingredientFields": {
+      "pattern": "strIngredient{N}",
+      "range": "1-20",
+      "description": "Ingredient name for slot N. Empty string or null if fewer than N ingredients exist."
+    },
+    "measureFields": {
+      "pattern": "strMeasure{N}",
+      "range": "1-20",
+      "description": "Quantity / unit for ingredient slot N. Corresponds 1:1 with strIngredient{N}."
+    }
+  },
+  "imageSizes": {
+    "description": "Image size suffixes appended to meal and ingredient thumbnail URLs.",
+    "values": [
+      { "suffix": "/small", "description": "Small thumbnail variant" },
+      { "suffix": "/medium", "description": "Medium thumbnail variant" },
+      { "suffix": "/large", "description": "Large thumbnail variant" }
+    ],
+    "mealBaseUrl": "https://www.themealdb.com/images/media/meals/",
+    "ingredientBaseUrl": "https://www.themealdb.com/images/ingredients/"
+  },
+  "accessTiers": {
+    "description": "API access tiers and associated API key usage.",
+    "tiers": [
+      {
+        "name": "Free / Test",
+        "apiKey": "1",
+        "baseUrl": "https://www.themealdb.com/api/json/v1/1/",
+        "description": "Public test key. Use for development, education, and open projects."
+      },
+      {
+        "name": "Premium",
+        "apiKey": "<supporter_key>",
+        "baseUrl": "https://www.themealdb.com/api/json/v2/<supporter_key>/",
+        "description": "Lifetime supporter key (one-time £10 payment). Unlocks /randomselection.php, /latest.php, and multi-ingredient /filter.php."
+      }
+    ]
+  }
+}

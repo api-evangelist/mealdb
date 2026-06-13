@@ -45,6 +45,8 @@ apis:
         url: https://www.themealdb.com/api.php
       - type: Documentation
         url: https://www.themealdb.com/docs_api_guide.php
+      - type: OpenAPI
+        url: openapi/openapi.json
 common:
   - type: Website
     url: https://www.themealdb.com

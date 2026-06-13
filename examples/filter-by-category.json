@@ -1,0 +1,29 @@
+{
+  "summary": "Filter meals by category - GET /filter.php?c=Seafood",
+  "request": {
+    "method": "GET",
+    "url": "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "meals": [
+        {
+          "strMeal": "Baked salmon with fennel & tomatoes",
+          "strMealThumb": "https://www.themealdb.com/images/media/meals/1548772327.jpg",
+          "idMeal": "52959"
+        },
+        {
+          "strMeal": "Cajun spiced fish tacos",
+          "strMealThumb": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+          "idMeal": "52819"
+        },
+        {
+          "strMeal": "Grilled Portuguese sardines",
+          "strMealThumb": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg",
+          "idMeal": "52897"
+        }
+      ]
+    }
+  }
+}
