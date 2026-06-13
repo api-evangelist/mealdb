@@ -1,0 +1,111 @@
+aid: mealdb
+name: TheMealDB
+description: >-
+  TheMealDB is an open, crowd-sourced database of recipes from around the world offering a free REST API
+  with 669 meals, 927 ingredients, 300+ recipes complete with ingredients, step-by-step cooking
+  instructions, categories, area cuisines, and meal images. The API and site will always remain free
+  at point of access; a lifetime supporter upgrade unlocks premium V2 endpoints including multi-ingredient
+  filtering, random sets, latest meals, and the ability to add custom meals and images.
+url: https://raw.githubusercontent.com/api-evangelist/mealdb/refs/heads/main/apis.yml
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+specificationVersion: '0.19'
+created: '2026-06-13'
+modified: '2026-06-13'
+x-source: public-apis/public-apis
+x-category: Food & Drink
+x-type: open
+x-tier: 2
+x-tier-reason: free-open-api-with-premium-upgrade
+tags:
+  - Food
+  - Recipes
+  - Meals
+  - Cooking
+  - Ingredients
+  - Cuisine
+  - Open Data
+apis:
+  - name: TheMealDB Recipe API
+    description: >-
+      REST API providing search, lookup, filtering, and browsing of 669 meals across categories, areas,
+      and ingredients. Free V1 access uses the public test key "1" in the URL path. Premium V2 access
+      unlocks multi-ingredient filters, random sets, latest meals, and custom meal upload for lifetime
+      supporters (£10 one-time).
+    humanURL: https://www.themealdb.com/api.php
+    baseURL: https://www.themealdb.com/api/json/v1/1
+    tags:
+      - Recipes
+      - Meals
+      - Food
+      - Ingredients
+      - Cuisine
+      - REST
+    properties:
+      - type: Documentation
+        url: https://www.themealdb.com/api.php
+      - type: Documentation
+        url: https://www.themealdb.com/docs_api_guide.php
+common:
+  - type: Website
+    url: https://www.themealdb.com
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Pricing
+    url: https://www.themealdb.com/api.php
+  - type: TermsOfService
+    url: https://www.themealdb.com/terms_of_use.php
+  - type: PrivacyPolicy
+    url: https://www.themealdb.com/privacy_policy.php
+  - type: Plans
+    url: plans/mealdb-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/mealdb-rate-limits.yml
+  - type: FinOps
+    url: finops/mealdb-finops.yml
+  - type: X
+    url: https://twitter.com/TheAudioDB
+  - type: Facebook
+    url: https://www.facebook.com/TheDataDB/
+  - type: Discord
+    url: https://discord.com/invite/pFvgaXV
+features:
+  - name: Meal Search by Name
+    description: Search for meals by full or partial name and return full recipe details including ingredients and instructions.
+  - name: Browse by First Letter
+    description: List all meals beginning with a specified letter for alphabetical browsing.
+  - name: Meal Lookup by ID
+    description: Retrieve full recipe details for a specific meal using its unique numeric ID.
+  - name: Random Meal
+    description: Fetch a single random meal with complete recipe data; useful for "surprise me" features.
+  - name: Category Browsing
+    description: Retrieve all meal categories (Beef, Chicken, Dessert, Pasta, Seafood, etc.) with thumbnail images.
+  - name: Filter by Ingredient
+    description: Return a list of meals containing a specified main ingredient.
+  - name: Filter by Category
+    description: Return a list of meals belonging to a specific category.
+  - name: Filter by Area / Cuisine
+    description: Return a list of meals from a specific geographic cuisine area (Italian, Japanese, Mexican, etc.).
+  - name: Ingredient Catalog
+    description: List all known ingredients with descriptions and images.
+  - name: Meal Images
+    description: Meal and ingredient thumbnails with small, medium, and large size variants appended to the base image URL.
+  - name: Premium Multi-Ingredient Filter
+    description: Filter meals by multiple ingredients simultaneously (V2, supporter key required).
+  - name: Premium Random Set
+    description: Fetch 10 random meals in a single call (V2, supporter key required).
+  - name: Premium Latest Meals
+    description: Retrieve the 10 most recently added meals (V2, supporter key required).
+useCases:
+  - name: Recipe Discovery App
+    description: Power a mobile or web recipe finder that lets users search, filter, and browse meals by name, category, or cuisine.
+  - name: Meal Planning Tool
+    description: Build a weekly meal planner that suggests random meals and allows filtering by dietary category or ingredient.
+  - name: Cooking Education Platform
+    description: Provide step-by-step instructions and ingredient lists for culinary learning apps and cooking courses.
+  - name: Grocery List Generator
+    description: Extract ingredient lists from meal lookups to automatically populate grocery shopping lists.
+  - name: Cuisine Explorer
+    description: Let users discover meals from specific world cuisines and learn about regional cooking traditions.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,93 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: TheMealDB
+providerId: mealdb
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Food
+  - Recipes
+  - Meals
+  - Open Data
+  - Freemium
+description: >-
+  TheMealDB offers two tiers of API access. The free tier uses the public test key "1" embedded
+  directly in the V1 API URL path and provides access to the full meal search, lookup, filtering,
+  and category endpoints with no sign-up required. The premium Supporter tier is a one-time
+  lifetime upgrade (£10) that unlocks the V2 API endpoints including multi-ingredient filtering,
+  10-random-meal retrieval, latest-meal feeds, and the ability to add custom meals and images.
+  The site and core API will always remain free at point of access.
+sources:
+  - https://www.themealdb.com/api.php
+  - https://www.themealdb.com/docs_api_guide.php
+  - https://www.themealdb.com/
+plans:
+  - id: mealdb-free
+    name: Free
+    type: free
+    description: >-
+      Open access using the public test key "1". No sign-up or API key required. Covers all V1
+      endpoints including search, lookup, random meal, category listing, and single-ingredient
+      filtering. Suitable for development, education, and personal projects.
+    entries:
+      - label: API access
+        name: api_access
+        type: flat
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '$0 USD'
+        userMultiplied: false
+      - label: Meal database access
+        name: meal_database
+        type: quota
+        metric: meals
+        limit: 669
+        timeFrame: static
+        geo: global
+        unit: 1
+        price: 'included'
+        userMultiplied: false
+    elements:
+      - name: Search meals by name
+      - name: Browse meals by first letter
+      - name: Lookup meal by ID
+      - name: Random single meal
+      - name: All meal categories
+      - name: Filter by ingredient
+      - name: Filter by category
+      - name: Filter by area / cuisine
+      - name: List categories, areas, and ingredients
+      - name: Meal and ingredient images
+  - id: mealdb-supporter
+    name: Supporter
+    type: one-time
+    description: >-
+      Lifetime one-time upgrade that unlocks V2 API endpoints. Supporters receive a personal API
+      key replacing the "1" test key in the URL path, plus multi-ingredient filtering, random
+      sets of 10 meals, the latest-meals feed, and the ability to submit custom meals and images.
+    entries:
+      - label: Lifetime supporter upgrade
+        name: lifetime_upgrade
+        type: one-time
+        metric: one-time
+        limit: 1
+        timeFrame: lifetime
+        geo: global
+        unit: 1
+        price: '£10 GBP one-time'
+        userMultiplied: false
+    elements:
+      - name: All Free tier features
+      - name: Personal production API key
+      - name: V2 API endpoint access
+      - name: Multi-ingredient filtering
+      - name: 10 random meals in a single call
+      - name: Latest 10 meals feed
+      - name: Custom meal upload
+      - name: Custom meal image upload
+      - name: Beta endpoint access

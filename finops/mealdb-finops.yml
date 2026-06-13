@@ -1,0 +1,98 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: TheMealDB
+providerId: mealdb
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - FinOps
+  - FOCUS
+  - Food
+  - Recipes
+  - Open Data
+  - Freemium
+description: >-
+  FOCUS-aligned FinOps for TheMealDB: a freemium open-data recipe API with a zero-cost shared
+  V1 tier and a one-time £10 lifetime supporter upgrade for V2 premium access. The dominant
+  cost driver is the optional one-time upgrade rather than recurring usage-based charges. FinOps
+  practice centers on deciding when to upgrade, caching static data to reduce request volume,
+  and tracking any indirect hosting or bandwidth costs incurred by downstream consumers who
+  cache and serve meal data.
+sources:
+  - https://www.themealdb.com/api.php
+  - https://www.themealdb.com/docs_api_guide.php
+  - https://www.themealdb.com/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: TheMealDB
+serviceCategory: Open Data
+billingModel:
+  pricingCategory: Freemium / One-Time Purchase
+  billingFrequency: One-time (supporter upgrade); free otherwise
+  billingCurrency: GBP
+  chargeCategories:
+    - Purchase
+focusColumns:
+  ServiceName: TheMealDB Recipe API
+  ServiceCategory: Open Data
+  ServiceSubcategory: Food and Recipe Data
+  ProviderName: TheMealDB
+  PublisherName: TheMealDB
+  InvoiceIssuerName: TheMealDB
+  BillingCurrency: GBP
+  ChargeCategory: Purchase
+meters:
+  - name: supporter_upgrade
+    unit: one-time
+    aggregation: sum
+    dimensions:
+      - upgrade_type
+    description: >-
+      One-time £10 lifetime supporter upgrade charge that unlocks V2 API endpoints and a
+      personal production API key. This is the only direct monetary cost of TheMealDB.
+  - name: api_requests
+    unit: request
+    aggregation: sum
+    dimensions:
+      - endpoint
+      - api_version
+      - key_type
+    description: >-
+      API requests made against V1 (free) or V2 (supporter) endpoints. No per-request
+      charge is levied; tracking is useful for rate governance and capacity planning.
+  - name: cached_meal_data
+    unit: record
+    aggregation: max
+    dimensions:
+      - resource_type
+    description: >-
+      Count of meal records, ingredient records, or category records cached locally by the
+      consumer. Caching reduces API call volume and downstream latency.
+principles:
+  - name: Visibility
+    description: >-
+      Log all outbound API requests with endpoint, response time, and HTTP status to an
+      observability stack. Track daily request volume per endpoint to identify caching
+      opportunities and spot unexpected traffic spikes.
+  - name: Allocation
+    description: >-
+      If multiple teams or products consume TheMealDB, assign a distinct supporter key per
+      team to enable clean cost and usage allocation. The one-time £10 upgrade cost should
+      be tagged to the consuming team or product in your FinOps ledger.
+  - name: Optimization
+    description: >-
+      Cache semi-static data (categories, area lists, ingredient catalog, meal details by
+      ID) with a 24-hour TTL. Use the random.php endpoint sparingly; prefer cached meal
+      sets for non-personalized recommendations. Upgrade to a supporter key before
+      deploying to production to avoid shared test-key contention.
+  - name: Accountability
+    description: >-
+      Assign a platform owner for each supporter API key. Track the one-time upgrade cost
+      in your software spend ledger under Open Data / Food. Alert if request error rates
+      rise, indicating potential key misuse or service degradation on the shared free tier.

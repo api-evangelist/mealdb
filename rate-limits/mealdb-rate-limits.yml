@@ -1,0 +1,71 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: TheMealDB
+providerId: mealdb
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Rate Limiting
+  - Recipes
+  - Food
+  - Open Data
+description: >-
+  TheMealDB does not publish explicit per-second, per-minute, or per-month request quotas
+  for either the free or supporter tiers. The public test key "1" is shared across all
+  unauthenticated consumers and is intended for development, testing, and personal use rather
+  than high-volume production traffic. Supporter keys are individual production keys obtained
+  via the lifetime upgrade (£10) and are better suited for production workloads. Because no
+  hard limits are documented, consumers should implement sensible client-side throttling,
+  caching of static resources (categories, ingredient lists, meal details), and exponential
+  backoff on error responses to be a good API citizen.
+sources:
+  - https://www.themealdb.com/api.php
+  - https://www.themealdb.com/docs_api_guide.php
+limits:
+  - name: Free tier request rate (test key "1")
+    scope: shared-key
+    metric: requests_per_second
+    limit: 'not publicly documented; shared key intended for development/personal use'
+    timeFrame: second
+    notes: >-
+      The test key "1" is shared among all unauthenticated callers. No explicit quota is
+      documented. Consumers should cache meal data locally and avoid rapid burst requests
+      to avoid service degradation.
+  - name: Supporter tier request rate (personal key)
+    scope: key
+    metric: requests_per_second
+    limit: 'not publicly documented; personal production key'
+    timeFrame: second
+    notes: >-
+      Personal supporter keys are suited for production use. No explicit rate limit numbers
+      are published. Apply standard HTTP backoff on 429 or 5xx responses.
+  - name: Meal database size
+    scope: global
+    metric: total_meals
+    limit: 669
+    timeFrame: static
+    notes: >-
+      The total number of meals in the database is 669 as of 2026. The free tier exposes
+      the full V1 catalog; the supporter tier additionally enables custom meal submission.
+policies:
+  - name: Client-side caching
+    description: >-
+      Cache semi-static resources such as category lists (/categories.php), area lists
+      (/list.php?a=list), ingredient lists (/list.php?i=list), and individual meal details
+      (/lookup.php?i=ID) locally with an appropriate TTL (e.g. 24 hours) to minimize
+      redundant API calls.
+  - name: Respectful polling
+    description: >-
+      Because no documented rate limit exists, consumers should implement request throttling
+      in their client (e.g. ≤1 request/second for the shared test key) and avoid burst
+      patterns that could degrade service for other users of the shared key.
+  - name: Exponential backoff
+    description: >-
+      On HTTP 429 or 5xx responses, apply exponential backoff with jitter before retrying.
+      Do not immediately retry failed requests.
+  - name: Production use
+    description: >-
+      High-volume or commercial production workloads should upgrade to a supporter key (£10
+      lifetime) rather than relying on the shared test key "1".
