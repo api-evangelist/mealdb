@@ -48,6 +48,8 @@ apis:
       - type: OpenAPI
         url: openapi/openapi.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/mealdb-agentic-access.yml
   - type: DomainSecurity
     url: security/mealdb-domain-security.yml
   - type: Website
