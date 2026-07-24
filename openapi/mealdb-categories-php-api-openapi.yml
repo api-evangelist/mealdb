@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: TheMealDB Categories.php API
+  description: An open, crowd-sourced database of meals and recipes from around the world
+  version: 1.0.0
+  contact:
+    url: https://www.themealdb.com
+servers:
+- url: https://www.themealdb.com/api/json/v1/{apiKey}
+  variables:
+    apiKey:
+      default: '1'
+      description: API key - use '1' for testing/development. Premium supporters use their personal key.
+tags:
+- name: Categories.php
+paths:
+  /categories.php:
+    get:
+      summary: List all meal categories
+      description: Return all meal categories with thumbnail images and descriptions.
+      operationId: listCategories
+      responses:
+        '200':
+          description: Successful response with all categories
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  categories:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Category'
+              example:
+                categories:
+                - idCategory: '1'
+                  strCategory: Beef
+                  strCategoryThumb: https://www.themealdb.com/images/category/beef.png
+                  strCategoryDescription: Beef is the culinary name for meat from cattle...
+      tags:
+      - Categories.php
+components:
+  schemas:
+    Category:
+      type: object
+      description: Meal category record.
+      properties:
+        idCategory:
+          type: string
+          description: Unique numeric category identifier
+          example: '1'
+        strCategory:
+          type: string
+          description: Category name
+          example: Beef
+        strCategoryThumb:
+          type: string
+          format: uri
+          description: URL to the category thumbnail image
+          example: https://www.themealdb.com/images/category/beef.png
+        strCategoryDescription:
+          type: string
+          description: Text description of the category

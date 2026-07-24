@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: TheMealDB Categories.php Filter.php API
+  description: An open, crowd-sourced database of meals and recipes from around the world
+  version: 1.0.0
+  contact:
+    url: https://www.themealdb.com
+servers:
+- url: https://www.themealdb.com/api/json/v1/{apiKey}
+  variables:
+    apiKey:
+      default: '1'
+      description: API key - use '1' for testing/development. Premium supporters use their personal key.
+tags:
+- name: Filter.php
+paths:
+  /filter.php:
+    get:
+      summary: Filter meals by ingredient, category, or area
+      description: Return a list of meals matching the specified filter. Free tier supports a single ingredient. Premium tier supports multiple comma-separated ingredients.
+      operationId: filterMeals
+      parameters:
+      - name: i
+        in: query
+        description: Filter by ingredient name (e.g. i=chicken_breast). Comma-separate multiple values for premium multi-ingredient filtering.
+        schema:
+          type: string
+      - name: c
+        in: query
+        description: Filter by category name (e.g. c=Seafood)
+        schema:
+          type: string
+      - name: a
+        in: query
+        description: Filter by cuisine area (e.g. a=Italian)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response with abbreviated meal list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meals:
+                    type: array
+                    nullable: true
+                    items:
+                      $ref: '#/components/schemas/MealSummary'
+      tags:
+      - Filter.php
+components:
+  schemas:
+    MealSummary:
+      type: object
+      description: Abbreviated meal record returned by filter endpoints.
+      properties:
+        strMeal:
+          type: string
+          description: Meal name
+          example: Spicy Arrabiata Penne
+        strMealThumb:
+          type: string
+          format: uri
+          description: URL to the meal thumbnail image
+        idMeal:
+          type: string
+          description: Unique numeric identifier for the meal
+          example: '52771'

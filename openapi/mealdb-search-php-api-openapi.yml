@@ -1,0 +1,242 @@
+openapi: 3.0.0
+info:
+  title: TheMealDB Categories.php Search.php API
+  description: An open, crowd-sourced database of meals and recipes from around the world
+  version: 1.0.0
+  contact:
+    url: https://www.themealdb.com
+servers:
+- url: https://www.themealdb.com/api/json/v1/{apiKey}
+  variables:
+    apiKey:
+      default: '1'
+      description: API key - use '1' for testing/development. Premium supporters use their personal key.
+tags:
+- name: Search.php
+paths:
+  /search.php:
+    get:
+      summary: Search meals
+      description: Search for meals by name or list meals by first letter.
+      operationId: searchMeals
+      parameters:
+      - name: s
+        in: query
+        description: Search meal by name (e.g. s=Arrabiata)
+        schema:
+          type: string
+      - name: f
+        in: query
+        description: List meals by first letter (single character, e.g. f=a)
+        schema:
+          type: string
+          maxLength: 1
+      responses:
+        '200':
+          description: Successful response with array of meals or null if none found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meals:
+                    type: array
+                    nullable: true
+                    items:
+                      $ref: '#/components/schemas/Meal'
+              example:
+                meals:
+                - idMeal: '52771'
+                  strMeal: Spicy Arrabiata Penne
+                  strCategory: Vegetarian
+                  strArea: Italian
+                  strInstructions: Bring a large pot of water to a boil...
+                  strMealThumb: https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg
+                  strTags: Pasta,Curry
+                  strYoutube: https://www.youtube.com/watch?v=1IszT_guI08
+                  strIngredient1: penne rigate
+                  strMeasure1: 1 pound
+      tags:
+      - Search.php
+components:
+  schemas:
+    Meal:
+      type: object
+      description: Full meal record with recipe details, ingredients, and measurements.
+      properties:
+        idMeal:
+          type: string
+          description: Unique numeric identifier for the meal
+          example: '52771'
+        strMeal:
+          type: string
+          description: Meal name
+          example: Spicy Arrabiata Penne
+        strDrinkAlternate:
+          type: string
+          nullable: true
+          description: Suggested drink pairing
+        strCategory:
+          type: string
+          description: Meal category (e.g. Vegetarian, Beef, Dessert)
+          example: Vegetarian
+        strArea:
+          type: string
+          description: Cuisine area / country of origin
+          example: Italian
+        strInstructions:
+          type: string
+          description: Step-by-step cooking instructions
+        strMealThumb:
+          type: string
+          format: uri
+          description: URL to the meal thumbnail image. Append /small, /medium, or /large for sized variants.
+          example: https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg
+        strTags:
+          type: string
+          nullable: true
+          description: Comma-separated tags
+          example: Pasta,Curry
+        strYoutube:
+          type: string
+          nullable: true
+          format: uri
+          description: YouTube video URL for recipe walkthrough
+        strIngredient1:
+          type: string
+          nullable: true
+        strIngredient2:
+          type: string
+          nullable: true
+        strIngredient3:
+          type: string
+          nullable: true
+        strIngredient4:
+          type: string
+          nullable: true
+        strIngredient5:
+          type: string
+          nullable: true
+        strIngredient6:
+          type: string
+          nullable: true
+        strIngredient7:
+          type: string
+          nullable: true
+        strIngredient8:
+          type: string
+          nullable: true
+        strIngredient9:
+          type: string
+          nullable: true
+        strIngredient10:
+          type: string
+          nullable: true
+        strIngredient11:
+          type: string
+          nullable: true
+        strIngredient12:
+          type: string
+          nullable: true
+        strIngredient13:
+          type: string
+          nullable: true
+        strIngredient14:
+          type: string
+          nullable: true
+        strIngredient15:
+          type: string
+          nullable: true
+        strIngredient16:
+          type: string
+          nullable: true
+        strIngredient17:
+          type: string
+          nullable: true
+        strIngredient18:
+          type: string
+          nullable: true
+        strIngredient19:
+          type: string
+          nullable: true
+        strIngredient20:
+          type: string
+          nullable: true
+        strMeasure1:
+          type: string
+          nullable: true
+        strMeasure2:
+          type: string
+          nullable: true
+        strMeasure3:
+          type: string
+          nullable: true
+        strMeasure4:
+          type: string
+          nullable: true
+        strMeasure5:
+          type: string
+          nullable: true
+        strMeasure6:
+          type: string
+          nullable: true
+        strMeasure7:
+          type: string
+          nullable: true
+        strMeasure8:
+          type: string
+          nullable: true
+        strMeasure9:
+          type: string
+          nullable: true
+        strMeasure10:
+          type: string
+          nullable: true
+        strMeasure11:
+          type: string
+          nullable: true
+        strMeasure12:
+          type: string
+          nullable: true
+        strMeasure13:
+          type: string
+          nullable: true
+        strMeasure14:
+          type: string
+          nullable: true
+        strMeasure15:
+          type: string
+          nullable: true
+        strMeasure16:
+          type: string
+          nullable: true
+        strMeasure17:
+          type: string
+          nullable: true
+        strMeasure18:
+          type: string
+          nullable: true
+        strMeasure19:
+          type: string
+          nullable: true
+        strMeasure20:
+          type: string
+          nullable: true
+        strSource:
+          type: string
+          nullable: true
+          format: uri
+          description: Original recipe source URL
+        strImageSource:
+          type: string
+          nullable: true
+          description: Image attribution source
+        strCreativeCommonsConfirmed:
+          type: string
+          nullable: true
+          description: Indicates if the image is confirmed Creative Commons licensed
+        dateModified:
+          type: string
+          format: date-time
+          nullable: true
+          description: Date the meal record was last modified
