@@ -7,7 +7,19 @@ description: >-
   at point of access; a lifetime supporter upgrade unlocks premium V2 endpoints including multi-ingredient
   filtering, random sets, latest meals, and the ability to add custom meals and images.
 url: https://raw.githubusercontent.com/api-evangelist/mealdb/refs/heads/main/apis.yml
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Freemium · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mealdb.png
 specificationVersion: '0.19'
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -25,28 +37,104 @@ tags:
   - Cuisine
   - Open Data
 apis:
-  - name: TheMealDB Recipe API
-    description: >-
-      REST API providing search, lookup, filtering, and browsing of 669 meals across categories, areas,
-      and ingredients. Free V1 access uses the public test key "1" in the URL path. Premium V2 access
-      unlocks multi-ingredient filters, random sets, latest meals, and custom meal upload for lifetime
-      supporters (£10 one-time).
-    humanURL: https://www.themealdb.com/api.php
-    baseURL: https://www.themealdb.com/api/json/v1/1
-    tags:
-      - Recipes
-      - Meals
-      - Food
-      - Ingredients
-      - Cuisine
-      - REST
-    properties:
-      - type: Documentation
-        url: https://www.themealdb.com/api.php
-      - type: Documentation
-        url: https://www.themealdb.com/docs_api_guide.php
-      - type: OpenAPI
-        url: openapi/openapi.json
+- aid: mealdb:mealdb-categories-php-api
+  name: TheMealDB Categories.php API
+  description: The Categories.php API from TheMealDB — 1 operation(s) for categories.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Categories.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-categories-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-filter-php-api
+  name: TheMealDB Filter.php API
+  description: The Filter.php API from TheMealDB — 1 operation(s) for filter.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Filter.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-filter-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-list-php-api
+  name: TheMealDB List.php API
+  description: The List.php API from TheMealDB — 1 operation(s) for list.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - List.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-list-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-lookup-php-api
+  name: TheMealDB Lookup.php API
+  description: The Lookup.php API from TheMealDB — 1 operation(s) for lookup.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Lookup.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-lookup-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-premium-api
+  name: TheMealDB Premium API
+  description: Premium-only endpoints requiring a paid lifetime supporter API key
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Premium
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-premium-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-random-php-api
+  name: TheMealDB Random.php API
+  description: The Random.php API from TheMealDB — 1 operation(s) for random.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Random.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-random-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-search-php-api
+  name: TheMealDB Search.php API
+  description: The Search.php API from TheMealDB — 1 operation(s) for search.php.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Search.php
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-search-php-api-openapi.yml
+  - type: Documentation
+    url: https://www.themealdb.com/api.php
+  - type: Documentation
+    url: https://www.themealdb.com/docs_api_guide.php
 common:
   - type: AgenticAccess
     url: agentic-access/mealdb-agentic-access.yml
