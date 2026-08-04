@@ -1,0 +1,26 @@
+{
+  "provider": "mealdb",
+  "sources": [
+    "mealdb-categories-php-api-openapi.yml",
+    "mealdb-filter-php-api-openapi.yml",
+    "mealdb-list-php-api-openapi.yml",
+    "mealdb-lookup-php-api-openapi.yml",
+    "mealdb-premium-api-openapi.yml",
+    "mealdb-random-php-api-openapi.yml",
+    "mealdb-search-php-api-openapi.yml"
+  ],
+  "outputs": [
+    "mealdb-categories-php-api-openapi.yml",
+    "mealdb-filter-php-api-openapi.yml",
+    "mealdb-list-php-api-openapi.yml",
+    "mealdb-lookup-php-api-openapi.yml",
+    "mealdb-premium-api-openapi.yml",
+    "mealdb-random-php-api-openapi.yml",
+    "mealdb-search-php-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
