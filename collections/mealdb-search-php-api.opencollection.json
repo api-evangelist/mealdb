@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php Search.php API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search.php",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search meals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/search.php",
+            "params": [
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Search meal by name (e.g. s=Arrabiata)"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query",
+                "description": "List meals by first letter (single character, e.g. f=a)"
+              }
+            ]
+          },
+          "docs": "Search for meals by name or list meals by first letter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

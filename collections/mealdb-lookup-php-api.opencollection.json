@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php Lookup.php API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lookup.php",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lookup full meal details by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/lookup.php",
+            "params": [
+              {
+                "name": "i",
+                "value": "",
+                "type": "query",
+                "description": "Numeric meal ID (e.g. i=52772)"
+              }
+            ]
+          },
+          "docs": "Retrieve complete recipe payload including all ingredients and measurements by meal ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

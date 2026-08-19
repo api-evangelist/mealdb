@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "606bd733-f9dd-4a0e-9501-5239819fc84a",
+      "name": "Lookup.php",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7662b35e-4834-41ff-8f96-efa068b2fb85",
+          "name": "Lookup full meal details by ID",
+          "request": {
+            "name": "Lookup full meal details by ID",
+            "description": {
+              "content": "Retrieve complete recipe payload including all ingredients and measurements by meal ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lookup.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "i",
+                  "value": "<string>",
+                  "description": "(Required) Numeric meal ID (e.g. i=52772)"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+                  "type": "any",
+                  "value": "{{apiKey}}",
+                  "key": "apiKey"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f38ee630-751c-428d-9544-acad4831821b",
+              "name": "Successful response with full meal details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lookup.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "i",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+                      "type": "any",
+                      "value": "{{apiKey}}",
+                      "key": "apiKey"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meals\": [\n    {\n      \"idMeal\": \"52771\",\n      \"strMeal\": \"Spicy Arrabiata Penne\",\n      \"strDrinkAlternate\": \"string\",\n      \"strCategory\": \"Vegetarian\",\n      \"strArea\": \"Italian\",\n      \"strInstructions\": \"string\",\n      \"strMealThumb\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\",\n      \"strTags\": \"Pasta,Curry\",\n      \"strYoutube\": \"https://g.gnjuoE6h3JwMtIhK.sSsIiw6V0ojg\",\n      \"strIngredient1\": \"string\",\n      \"strIngredient2\": \"string\",\n      \"strIngredient3\": \"string\",\n      \"strIngredient4\": \"string\",\n      \"strIngredient5\": \"string\",\n      \"strIngredient6\": \"string\",\n      \"strIngredient7\": \"string\",\n      \"strIngredient8\": \"string\",\n      \"strIngredient9\": \"string\",\n      \"strIngredient10\": \"string\",\n      \"strIngredient11\": \"string\",\n      \"strIngredient12\": \"string\",\n      \"strIngredient13\": \"string\",\n      \"strIngredient14\": \"string\",\n      \"strIngredient15\": \"string\",\n      \"strIngredient16\": \"string\",\n      \"strIngredient17\": \"string\",\n      \"strIngredient18\": \"string\",\n      \"strIngredient19\": \"string\",\n      \"strIngredient20\": \"string\",\n      \"strMeasure1\": \"string\",\n      \"strMeasure2\": \"string\",\n      \"strMeasure3\": \"string\",\n      \"strMeasure4\": \"string\",\n      \"strMeasure5\": \"string\",\n      \"strMeasure6\": \"string\",\n      \"strMeasure7\": \"string\",\n      \"strMeasure8\": \"string\",\n      \"strMeasure9\": \"string\",\n      \"strMeasure10\": \"string\",\n      \"strMeasure11\": \"string\",\n      \"strMeasure12\": \"string\",\n      \"strMeasure13\": \"string\",\n      \"strMeasure14\": \"string\",\n      \"strMeasure15\": \"string\",\n      \"strMeasure16\": \"string\",\n      \"strMeasure17\": \"string\",\n      \"strMeasure18\": \"string\",\n      \"strMeasure19\": \"string\",\n      \"strMeasure20\": \"string\",\n      \"strSource\": \"https://tqKpxdxCYXBoWbfTdJTviHaR.ulimdNDjeMjCkJFSuAb.-1hRjPCm,XZ0GD-kntlxbmiln14TiMzcC6pyMLSemT\",\n      \"strImageSource\": \"string\",\n      \"strCreativeCommonsConfirmed\": \"string\",\n      \"dateModified\": \"1979-02-15T11:45:56.969Z\"\n    },\n    {\n      \"idMeal\": \"52771\",\n      \"strMeal\": \"Spicy Arrabiata Penne\",\n      \"strDrinkAlternate\": \"string\",\n      \"strCategory\": \"Vegetarian\",\n      \"strArea\": \"Italian\",\n      \"strInstructions\": \"string\",\n      \"strMealThumb\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\",\n      \"strTags\": \"Pasta,Curry\",\n      \"strYoutube\": \"http://dwaqhVVXsFuxHYJBwWbCUyXallplR.btbxriJo0v1MFbUtH0WoBdUl+XClMwWKhcnftGK6FukxV\",\n      \"strIngredient1\": \"string\",\n      \"strIngredient2\": \"string\",\n      \"strIngredient3\": \"string\",\n      \"strIngredient4\": \"string\",\n      \"strIngredient5\": \"string\",\n      \"strIngredient6\": \"string\",\n      \"strIngredient7\": \"string\",\n      \"strIngredient8\": \"string\",\n      \"strIngredient9\": \"string\",\n      \"strIngredient10\": \"string\",\n      \"strIngredient11\": \"string\",\n      \"strIngredient12\": \"string\",\n      \"strIngredient13\": \"string\",\n      \"strIngredient14\": \"string\",\n      \"strIngredient15\": \"string\",\n      \"strIngredient16\": \"string\",\n      \"strIngredient17\": \"string\",\n      \"strIngredient18\": \"string\",\n      \"strIngredient19\": \"string\",\n      \"strIngredient20\": \"string\",\n      \"strMeasure1\": \"string\",\n      \"strMeasure2\": \"string\",\n      \"strMeasure3\": \"string\",\n      \"strMeasure4\": \"string\",\n      \"strMeasure5\": \"string\",\n      \"strMeasure6\": \"string\",\n      \"strMeasure7\": \"string\",\n      \"strMeasure8\": \"string\",\n      \"strMeasure9\": \"string\",\n      \"strMeasure10\": \"string\",\n      \"strMeasure11\": \"string\",\n      \"strMeasure12\": \"string\",\n      \"strMeasure13\": \"string\",\n      \"strMeasure14\": \"string\",\n      \"strMeasure15\": \"string\",\n      \"strMeasure16\": \"string\",\n      \"strMeasure17\": \"string\",\n      \"strMeasure18\": \"string\",\n      \"strMeasure19\": \"string\",\n      \"strMeasure20\": \"string\",\n      \"strSource\": \"http://exOlIorvxbaVYmtaZKoVIb.ghvcXH6MP9ahmP8z,cD.urcUOV6WSFyEOhZraQnZ3XCg9Gb+dMD+\",\n      \"strImageSource\": \"string\",\n      \"strCreativeCommonsConfirmed\": \"string\",\n      \"dateModified\": \"2005-06-13T22:28:41.055Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "1",
+      "key": "apiKey"
+    },
+    {
+      "type": "string",
+      "value": "https://www.themealdb.com/api/json/v1/{{apiKey}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4aada635-2ac9-43b7-bc74-fff07ae70205",
+    "name": "TheMealDB Categories.php Lookup.php API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An open, crowd-sourced database of meals and recipes from around the world",
+      "type": "text/plain"
+    }
+  }
+}

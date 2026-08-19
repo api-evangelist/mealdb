@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php List.php API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List.php",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List categories, areas, or ingredients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/list.php",
+            "params": [
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "List all meal categories (value must be 'list')"
+              },
+              {
+                "name": "a",
+                "value": "",
+                "type": "query",
+                "description": "List all cuisine areas (value must be 'list')"
+              },
+              {
+                "name": "i",
+                "value": "",
+                "type": "query",
+                "description": "List all ingredients (value must be 'list')"
+              }
+            ]
+          },
+          "docs": "Return a flat list of all available categories, cuisine areas, or ingredients. Provide exactly one query parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

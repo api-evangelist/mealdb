@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Categories.php",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all meal categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/categories.php"
+          },
+          "docs": "Return all meal categories with thumbnail images and descriptions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

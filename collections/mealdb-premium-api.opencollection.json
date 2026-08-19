@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php Premium API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Premium",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get 10 random meals (Premium only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/randomselection.php"
+          },
+          "docs": "Retrieve 10 randomly selected meals in a single call. Requires a premium supporter API key."
+        },
+        {
+          "info": {
+            "name": "Get latest 10 meals (Premium only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/latest.php"
+          },
+          "docs": "Retrieve the 10 most recently added meals. Requires a premium supporter API key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

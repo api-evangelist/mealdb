@@ -1,0 +1,157 @@
+{
+  "item": [
+    {
+      "id": "7c0e6ecf-4406-48da-aebe-9672965d6c01",
+      "name": "Filter.php",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d42ba502-6faa-429d-8a2f-0351dfe5f59c",
+          "name": "Filter meals by ingredient, category, or area",
+          "request": {
+            "name": "Filter meals by ingredient, category, or area",
+            "description": {
+              "content": "Return a list of meals matching the specified filter. Free tier supports a single ingredient. Premium tier supports multiple comma-separated ingredients.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "filter.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "i",
+                  "value": "<string>",
+                  "description": "Filter by ingredient name (e.g. i=chicken_breast). Comma-separate multiple values for premium multi-ingredient filtering."
+                },
+                {
+                  "disabled": false,
+                  "key": "c",
+                  "value": "<string>",
+                  "description": "Filter by category name (e.g. c=Seafood)"
+                },
+                {
+                  "disabled": false,
+                  "key": "a",
+                  "value": "<string>",
+                  "description": "Filter by cuisine area (e.g. a=Italian)"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+                  "type": "any",
+                  "value": "{{apiKey}}",
+                  "key": "apiKey"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "86bd810e-e17c-413a-9866-990c29faef91",
+              "name": "Successful response with abbreviated meal list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filter.php"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "i",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "c",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "a",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+                      "type": "any",
+                      "value": "{{apiKey}}",
+                      "key": "apiKey"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meals\": [\n    {\n      \"strMeal\": \"Spicy Arrabiata Penne\",\n      \"strMealThumb\": \"https://ilsiTVtrELaeZdBKklRmSfMRzuYXQW.bcuunNINiQs\",\n      \"idMeal\": \"52771\"\n    },\n    {\n      \"strMeal\": \"Spicy Arrabiata Penne\",\n      \"strMealThumb\": \"https://laSyrTKLdoLiPytxDIOGgbun.ozDoxG4y.eR\",\n      \"idMeal\": \"52771\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "API key - use '1' for testing/development. Premium supporters use their personal key.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "1",
+      "key": "apiKey"
+    },
+    {
+      "type": "string",
+      "value": "https://www.themealdb.com/api/json/v1/{{apiKey}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2ed52d95-2fec-4776-8d6e-f941bfc9227e",
+    "name": "TheMealDB Categories.php Filter.php API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An open, crowd-sourced database of meals and recipes from around the world",
+      "type": "text/plain"
+    }
+  }
+}

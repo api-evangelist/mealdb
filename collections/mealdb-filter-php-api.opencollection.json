@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TheMealDB Categories.php Filter.php API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filter.php",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Filter meals by ingredient, category, or area",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.themealdb.com/api/json/v1/{apiKey}/filter.php",
+            "params": [
+              {
+                "name": "i",
+                "value": "",
+                "type": "query",
+                "description": "Filter by ingredient name (e.g. i=chicken_breast). Comma-separate multiple values for premium multi-ingredient filtering."
+              },
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Filter by category name (e.g. c=Seafood)"
+              },
+              {
+                "name": "a",
+                "value": "",
+                "type": "query",
+                "description": "Filter by cuisine area (e.g. a=Italian)"
+              }
+            ]
+          },
+          "docs": "Return a list of meals matching the specified filter. Free tier supports a single ingredient. Premium tier supports multiple comma-separated ingredients."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
