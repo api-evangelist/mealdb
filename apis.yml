@@ -7,6 +7,18 @@ description: >-
   at point of access; a lifetime supporter upgrade unlocks premium V2 endpoints including multi-ingredient
   filtering, random sets, latest meals, and the ability to add custom meals and images.
 url: https://raw.githubusercontent.com/api-evangelist/mealdb/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: open
