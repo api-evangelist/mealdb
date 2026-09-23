@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: TheMealDB Categories.php Lookup.php API
+  title: TheMealDB Lookup.php API
   description: An open, crowd-sourced database of meals and recipes from around the world
   version: 1.0.0
   contact:
@@ -35,8 +35,9 @@ paths:
                 type: object
                 properties:
                   meals:
-                    type: array
-                    nullable: true
+                    type:
+                    - array
+                    - 'null'
                     items:
                       $ref: '#/components/schemas/Meal'
       tags:
@@ -56,8 +57,9 @@ components:
           description: Meal name
           example: Spicy Arrabiata Penne
         strDrinkAlternate:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Suggested drink pairing
         strCategory:
           type: string
@@ -76,150 +78,196 @@ components:
           description: URL to the meal thumbnail image. Append /small, /medium, or /large for sized variants.
           example: https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg
         strTags:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Comma-separated tags
           example: Pasta,Curry
         strYoutube:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           description: YouTube video URL for recipe walkthrough
         strIngredient1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient3:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient4:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient5:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient6:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient7:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient8:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient9:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient10:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient11:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient12:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient13:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient14:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient15:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient16:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient17:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient18:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient19:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strIngredient20:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure3:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure4:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure5:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure6:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure7:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure8:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure9:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure10:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure11:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure12:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure13:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure14:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure15:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure16:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure17:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure18:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure19:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strMeasure20:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         strSource:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: uri
           description: Original recipe source URL
         strImageSource:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Image attribution source
         strCreativeCommonsConfirmed:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Indicates if the image is confirmed Creative Commons licensed
         dateModified:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
           description: Date the meal record was last modified

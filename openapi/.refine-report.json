@@ -1,13 +1,7 @@
 {
   "provider": "mealdb",
   "sources": [
-    "mealdb-categories-php-api-openapi.yml",
-    "mealdb-filter-php-api-openapi.yml",
-    "mealdb-list-php-api-openapi.yml",
-    "mealdb-lookup-php-api-openapi.yml",
-    "mealdb-premium-api-openapi.yml",
-    "mealdb-random-php-api-openapi.yml",
-    "mealdb-search-php-api-openapi.yml"
+    "_original/openapi.json"
   ],
   "outputs": [
     "mealdb-categories-php-api-openapi.yml",
@@ -21,6 +15,35 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "4 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "openapi.json: tagged paths GET /search.php -> Search.php",
+    "openapi.json: tagged paths GET /lookup.php -> Lookup.php",
+    "openapi.json: tagged paths GET /random.php -> Random.php",
+    "openapi.json: tagged paths GET /categories.php -> Categories.php",
+    "openapi.json: tagged paths GET /list.php -> List.php",
+    "openapi.json: tagged paths GET /filter.php -> Filter.php",
+    "openapi.json: declared missing tag: Categories.php",
+    "openapi.json: declared missing tag: Filter.php",
+    "openapi.json: declared missing tag: List.php",
+    "openapi.json: declared missing tag: Lookup.php",
+    "openapi.json: declared missing tag: Random.php",
+    "openapi.json: declared missing tag: Search.php",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "_original/themealdb-search-api-openapi.yml: archived document superseded by a larger archived document",
+    "_original/themealdb-lookup-api-openapi.yml: archived document superseded by a larger archived document",
+    "_original/themealdb-list-api-openapi.yml: archived document superseded by a larger archived document",
+    "_original/themealdb-filter-api-openapi.yml: archived document superseded by a larger archived document",
+    "mealdb-categories-php-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-filter-php-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-list-php-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-lookup-php-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-premium-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-random-php-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "mealdb-search-php-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
