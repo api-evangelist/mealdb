@@ -96,3 +96,30 @@ plans:
       - name: Custom meal upload
       - name: Custom meal image upload
       - name: Beta endpoint access
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - one-time
+  - subscription
+  units:
+  - period
+  plans:
+  - name: Free
+    access: free
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    - period
+    periods:
+    - month
+    - other
+  - name: Supporter
+    access: other
+    model: one-time
+    model_how: stated
+    units:
+    - other
+    periods:
+    - one-time
