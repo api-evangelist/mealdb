@@ -1,0 +1,12 @@
+{
+ "url": "https://www.themealdb.com/api/spec/openapi-v2.yaml",
+ "final": "https://www.themealdb.com/api/spec/openapi-v2.yaml",
+ "status": 200,
+ "content_type": "application/yaml; charset=utf-8",
+ "bytes": 10539,
+ "sha256": "8c4a044af3ae27752a30c5799ecf049ff241964bb3e83721ca83c6ce7ad724da",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}

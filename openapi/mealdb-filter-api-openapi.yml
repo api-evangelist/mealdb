@@ -1,0 +1,115 @@
+openapi: 3.2.0
+info:
+  title: TheMealDB Filter API
+  version: '2.0'
+  description: Search and browse TheMealDB's crowd-sourced meals, recipes, cuisines, categories, and ingredient data. Access level and result limits depend on the supplied API key. Obtain access and review current terms on the official documentation page. API keys are deliberately not included in this specification.
+  termsOfService: https://www.themealdb.com/terms_of_use.php
+  contact:
+    name: TheMealDB
+    url: https://www.themealdb.com/contact.php
+    email: thedatadb@gmail.com
+  license:
+    name: TheMealDB Terms of Use
+    url: https://www.themealdb.com/terms_of_use.php
+servers:
+- url: https://www.themealdb.com/api/json/v2
+  description: Premium V2 API
+tags:
+- name: Filter
+paths:
+  /{apiKey}/filter.php:
+    get:
+      tags:
+      - Filter
+      summary: Filter meals
+      description: 'Supply exactly one filter: ingredient (`i`), category (`c`), or area/cuisine (`a`). V2 supports up to four comma-separated ingredients.'
+      operationId: filterV2
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/FilterIngredient'
+      - $ref: '#/components/parameters/Category'
+      - $ref: '#/components/parameters/Area'
+      responses:
+        '200':
+          description: Matching meal summaries
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MealSummariesResponse'
+components:
+  schemas:
+    MealSummariesResponse:
+      type: object
+      required:
+      - meals
+      properties:
+        meals:
+          oneOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/MealSummary'
+          - type: string
+            description: Legacy no-data message.
+          - type: 'null'
+    MealSummary:
+      type: object
+      required:
+      - idMeal
+      - strMeal
+      properties:
+        idMeal:
+          oneOf:
+          - type: integer
+          - type: string
+          description: Numeric meal identifier.
+        strMeal:
+          type: string
+        strMealThumb:
+          type:
+          - string
+          - 'null'
+          format: uri
+        strArea:
+          type:
+          - string
+          - 'null'
+        strCountry:
+          type:
+          - string
+          - 'null'
+  parameters:
+    Category:
+      name: c
+      in: query
+      required: false
+      description: Category name. Spaces may be represented by underscores.
+      schema:
+        type: string
+        minLength: 1
+    Area:
+      name: a
+      in: query
+      required: false
+      description: Area or cuisine name. Spaces may be represented by underscores.
+      schema:
+        type: string
+        minLength: 1
+    ApiKey:
+      name: apiKey
+      in: path
+      required: true
+      description: Your TheMealDB API key. No key value is stored in this specification.
+      schema:
+        type: string
+        minLength: 1
+    FilterIngredient:
+      name: i
+      in: query
+      required: false
+      description: Ingredient name, or up to four comma-separated ingredient names.
+      schema:
+        type: string
+        minLength: 1
+externalDocs:
+  description: Official API documentation
+  url: https://www.themealdb.com/documentation

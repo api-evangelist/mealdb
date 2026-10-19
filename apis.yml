@@ -142,6 +142,56 @@ apis:
     url: https://www.themealdb.com/api.php
   - type: Documentation
     url: https://www.themealdb.com/docs_api_guide.php
+- aid: mealdb:mealdb-discovery-api
+  name: TheMealDB Discovery API
+  description: The Discovery API from TheMealDB — 4 operation(s) for discovery.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-discovery-api-openapi.yml
+- aid: mealdb:mealdb-filter-api
+  name: TheMealDB Filter API
+  description: The Filter API from TheMealDB — 1 operation(s) for filter.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Filter
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-filter-api-openapi.yml
+- aid: mealdb:mealdb-lists-api
+  name: TheMealDB Lists API
+  description: The Lists API from TheMealDB — 2 operation(s) for lists.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-lists-api-openapi.yml
+- aid: mealdb:mealdb-lookup-api
+  name: TheMealDB Lookup API
+  description: The Lookup API from TheMealDB — 1 operation(s) for lookup.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Lookup
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-lookup-api-openapi.yml
+- aid: mealdb:mealdb-search-api
+  name: TheMealDB Search API
+  description: The Search API from TheMealDB — 1 operation(s) for search.
+  humanURL: https://www.themealdb.com/api.php
+  baseURL: https://www.themealdb.com/api/json/v1/1
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/mealdb-search-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/mealdb-agentic-access.yml

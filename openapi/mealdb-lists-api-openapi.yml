@@ -1,0 +1,131 @@
+openapi: 3.2.0
+info:
+  title: TheMealDB Lists API
+  version: '2.0'
+  description: Search and browse TheMealDB's crowd-sourced meals, recipes, cuisines, categories, and ingredient data. Access level and result limits depend on the supplied API key. Obtain access and review current terms on the official documentation page. API keys are deliberately not included in this specification.
+  termsOfService: https://www.themealdb.com/terms_of_use.php
+  contact:
+    name: TheMealDB
+    url: https://www.themealdb.com/contact.php
+    email: thedatadb@gmail.com
+  license:
+    name: TheMealDB Terms of Use
+    url: https://www.themealdb.com/terms_of_use.php
+servers:
+- url: https://www.themealdb.com/api/json/v2
+  description: Premium V2 API
+tags:
+- name: Lists
+paths:
+  /{apiKey}/list.php:
+    get:
+      tags:
+      - Lists
+      summary: List filter values
+      description: 'Supply exactly one parameter with the literal value `list`: `c` for categories, `a` for areas, or `i` for ingredients.'
+      operationId: listFiltersV2
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/ListCategories'
+      - $ref: '#/components/parameters/ListAreas'
+      - $ref: '#/components/parameters/ListIngredients'
+      responses:
+        '200':
+          description: Available filter values or ingredient records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResponse'
+  /{apiKey}/categories.php:
+    get:
+      tags:
+      - Lists
+      summary: List detailed meal categories
+      operationId: categoriesV2
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Category records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponse'
+components:
+  schemas:
+    CategoriesResponse:
+      type: object
+      required:
+      - categories
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryRecord'
+    ListValue:
+      type: object
+      description: Contains an area, category, or full ingredient record according to the requested list.
+      additionalProperties: true
+    CategoryRecord:
+      type: object
+      properties:
+        idCategory:
+          oneOf:
+          - type: integer
+          - type: string
+        strCategory:
+          type:
+          - string
+          - 'null'
+        strCategoryThumb:
+          type:
+          - string
+          - 'null'
+        strCategoryDescription:
+          type:
+          - string
+          - 'null'
+    ListResponse:
+      type: object
+      required:
+      - meals
+      properties:
+        meals:
+          oneOf:
+          - type: array
+            items:
+              $ref: '#/components/schemas/ListValue'
+          - type: 'null'
+  parameters:
+    ListAreas:
+      name: a
+      in: query
+      required: false
+      schema:
+        type: string
+        const: list
+    ListCategories:
+      name: c
+      in: query
+      required: false
+      schema:
+        type: string
+        const: list
+    ListIngredients:
+      name: i
+      in: query
+      required: false
+      schema:
+        type: string
+        const: list
+    ApiKey:
+      name: apiKey
+      in: path
+      required: true
+      description: Your TheMealDB API key. No key value is stored in this specification.
+      schema:
+        type: string
+        minLength: 1
+externalDocs:
+  description: Official API documentation
+  url: https://www.themealdb.com/documentation

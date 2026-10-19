@@ -1,9 +1,15 @@
 {
   "provider": "mealdb",
   "sources": [
+    "_original/mealdb-openapi.yml",
     "_original/openapi.json"
   ],
   "outputs": [
+    "mealdb-discovery-api-openapi.yml",
+    "mealdb-filter-api-openapi.yml",
+    "mealdb-lists-api-openapi.yml",
+    "mealdb-lookup-api-openapi.yml",
+    "mealdb-search-api-openapi.yml",
     "mealdb-categories-php-api-openapi.yml",
     "mealdb-filter-php-api-openapi.yml",
     "mealdb-list-php-api-openapi.yml",
@@ -17,7 +23,8 @@
   "warnings": [],
   "notes": [
     "4 archived document(s) dropped as subsets of other archived documents",
-    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mealdb-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
     "openapi.json: tagged paths GET /search.php -> Search.php",
     "openapi.json: tagged paths GET /lookup.php -> Lookup.php",
@@ -31,7 +38,7 @@
     "openapi.json: declared missing tag: Lookup.php",
     "openapi.json: declared missing tag: Random.php",
     "openapi.json: declared missing tag: Search.php",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+5 apis, 12 total)"
   ],
   "skipped": [
     "_original/themealdb-search-api-openapi.yml: archived document superseded by a larger archived document",
